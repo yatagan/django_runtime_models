@@ -6,7 +6,7 @@ var indexPage =
 var selectedFiles =
   '<h3>Tables will be created:</h3>' +
   '<div id="tables"></div>' +
-  '<p><button id="create_tables">Create</button></p>';
+  '<p><button id="create_tables">Create models</button></p>';
 
 var tables;
 
@@ -24,7 +24,7 @@ $(function() {
 function handleFileSelect(evt) {
     tables = [];
     $('#view').html(swig.render(selectedFiles));
-    $('#create_tables').click(postTables);
+    $('#create_tables').click(postSchema);
 
     var files = evt.target.files;
 
@@ -43,6 +43,6 @@ function handleFileSelect(evt) {
     }
 }
 
-function postTables() {
+function postSchema() {
   alert("Post!");
 }
